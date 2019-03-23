@@ -7,12 +7,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * ��������Сд��ĸ��ɵ��ַ������� A�������б��е�ÿ���ַ����ж���ʾ��ȫ���ַ��������ظ��ַ�����ɵ��б������磬���һ���ַ���ÿ���ַ����г��� 3
- * �Σ������� 4 �Σ�����Ҫ�����մ��а������ַ� 3 �Ρ� ����԰�����˳�򷵻ش𰸡�
+ * 给定仅有小写字母组成的字符串数组 A，返回列表中的每个字符串中都显示的全部字符（包括重复字符）组成的列表。例如，如果一个字符在每个字符串中出现 3
+ * 次，但不是 4 次，则需要在最终答案中包含该字符 3 次。 你可以按任意顺序返回答案。
  *
- * ���룺["bella","label","roller"] �����["e","l","l"]
+ * 输入：["bella","label","roller"] 输出：["e","l","l"]
  * 
- * @since 2019��3��17�� ����9:54:43
+ * @since 2019年3月17日 上午9:54:43
  * @author luhao
  *
  */
@@ -24,7 +24,7 @@ public class CommonChars {
 	}
 
 	/**
-	 * ѭ�����飬��¼��һ���ַ���ÿ���ַ����ֵĴ����浽����flag�� ��������flag��ļ���Ϊ��С ��flag��ļ������ַ�һһ��Ӧ�ӵ��������ﲢ����
+	 * 循环数组，记录第一个字符串每个字符出现的次数存到数组flag里 保持数组flag存的计数为最小 将flag里的计数和字符一一对应加到新数组里并返回
 	 * 
 	 * @param A
 	 * @return
@@ -35,14 +35,14 @@ public class CommonChars {
 		boolean ishead = true;
 		for (String a : A) {
 
-			if (ishead) { // ��Ϊ����A�ĵ�һ��Ԫ��ʱ
+			if (ishead) { // 当为数组A的第一个元素时
 				for (int j = 0; j < a.length(); j++) {
 					char c = a.charAt(j);
 					flag[c - 'a']++;
 				}
 				ishead = false;
 				continue;
-			} else { // ��Ϊ��һ��Ԫ��ʱ
+			} else { // 不为第一个元素时
 				int[] num = new int[26];
 				for (int j = 0; j < a.length(); j++) {
 					char c = a.charAt(j);
