@@ -45,4 +45,4 @@ public class TwoStacksQueue {
 		return stackPop.peek();
 	}
 }
-}
+
